@@ -1,0 +1,15 @@
+<h3 class="jumbotron">List of People in the Forum</h3>
+<hr/>
+<ul class="table table-hover" *ngFor="let p of personList">
+    <li>{{p.name}} - {{p.aadhar}}</li>
+</ul>
+<input type="text" [(ngModel)]="valuetosearch"/>
+<div *ngFor="let p of personList|search:valuetosearch">
+        <div class="card float-start mx-3" style="width: 18rem;">
+            <img src="https://picsum.photos/seed/picsum/200/300" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text"> Name: {{p.name}}</p>
+              <p class="card-text">Aadhar:{{p.aadhar}}</p>
+            </div>
+          </div>
+</div>
